@@ -6,6 +6,9 @@ public class Calculator {
         return a - b;
     }
     public int div(int a, int b){
+        if (b == 0) {
+            throw new IllegalArgumentException("Деление на ноль!");
+        }
         if (b == 0) return 0;
         return a / b;
     }
@@ -14,6 +17,7 @@ public class Calculator {
     }
 
     public int solver(){
+        return dif(div(add(15, 3), 2), times(5, 1));
 
         int sum = add(5, 3);
         int diff = dif(10, 2);
