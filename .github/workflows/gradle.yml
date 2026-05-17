@@ -29,7 +29,6 @@ jobs:
     - name: Setup Gradle
       uses: gradle/actions/setup-gradle@af1da67850ed9a4cedd57bfd976089dd991e2582
 
-    # 🔧 FIX: выдаём права на выполнение gradlew для Linux
     - name: Grant execute permission for gradlew
       run: chmod +x gradlew
 
@@ -49,6 +48,10 @@ jobs:
       with:
         java-version: '11'
         distribution: 'temurin'
+
+    # 🔧 FIX: добавили chmod +x gradlew
+    - name: Grant execute permission for gradlew
+      run: chmod +x gradlew
 
     - name: Generate and submit dependency graph
       uses: gradle/actions/dependency-submission@af1da67850ed9a4cedd57bfd976089dd991e2582
